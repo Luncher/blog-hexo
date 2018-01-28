@@ -1,6 +1,7 @@
 ---
 title: vscode开发环境配置
 categories: vscode
+date: 2016-03-07 12:37:03
 ---
 
 ## 初衷  

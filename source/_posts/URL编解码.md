@@ -1,6 +1,7 @@
 ---
 title: URL编解码
 categories: web
+date: 2016-04-17 10:37:03
 ---
 &nbsp;&nbsp;&nbsp;&nbsp;URI(统一资源定为标志)，用于指定想要访问的资源，URI可以有各种形式，如：日常在用的URL、每本书背面的ISBN码都是URI的一种形式, 日常过程中，如果不加区分，一般说的`URI`都指的是`URL`。拿我们熟悉的URL来说：
 

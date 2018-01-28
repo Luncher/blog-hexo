@@ -1,6 +1,7 @@
 ---
 title: async-tutorial
 categories: server
+date: 2016-06-07 19:37:24
 ---
 `async`是一个强大的异步流程控制库，其语义类似于`js`对数组的操作。它提供了一系列非常强大而便捷的方法，有助于我们在`javascript`单线程模型背景下写出优雅的逻辑控制代码。  
 

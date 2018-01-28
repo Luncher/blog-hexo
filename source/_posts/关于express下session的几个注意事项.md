@@ -1,7 +1,9 @@
 ---
 title: 关于express下session的几个注意事项
 categories: server
+date: 2016-10-07 19:30:20
 ---
+
 使用nodejs开发web应用之所以快，其中一个重要原因是非常齐全的第三方模块，你几乎可以找到任何想要的`module`。`express-session`是`express`WEB框架常用的`session`管理包。其主要有如下几个配置选项：  
 - cookie : 用于设置sessionID cookie选项，如过期时间，cookie适用的路径等。  
 - name  : sessionID 对应的cookie名。  

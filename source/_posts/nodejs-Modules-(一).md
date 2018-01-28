@@ -1,6 +1,7 @@
 ---
 title: nodejs-Modules-(一)
 categories: server
+date: 2015-12-07 10:37:01
 ---
   Nodejs拥有一套简单的模块加载系统，在Nodejs里面文件和模块是一一对应的关系。例如：`foo.js`加载了同一个目录下的`circle.js`文件。  
 

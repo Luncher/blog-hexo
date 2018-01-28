@@ -1,10 +1,9 @@
 ---
 title: 你不知道的Javascript上卷-阅读笔记
-date: 2016-10-08 14:46:41
+date: 2017-03-08 14:46:41
 tags: javascript
 categories: web
 ---
-
 
 # SCOPE&CLOSURES--THIS&OBJECT-PROTOTYPES
 

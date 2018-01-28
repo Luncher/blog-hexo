@@ -1,6 +1,7 @@
 ---
 title: electron-打包web应用
 categories: web
+date: 2016-05-22 11:30:24
 ---
 时下流行的web app打包工具主要有两个，一个是国内开发者主导的`nw.js`，另一个是国外大厂支撑的`electron`。对比了`nw.js`以及`electron`之后还是选择了`electron`，原因主要有以下几点：
 

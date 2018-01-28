@@ -1,6 +1,7 @@
 ---
 title: textMate snippet说明
 categories: vscode
+date: 2016-06-08 19:37:24
 ---
 
 textMate一直是`mac`下常用的编辑器不过现在好像被`sublime`、`atom`、`vscode`等一系列新生带编辑器取代。为了学习`vscode`的编写，打算系统学学`snippet`语法。

@@ -1,6 +1,6 @@
 ---
 title: jvascript模块管理
-date: 2016-08-15 16:26:23
+date: 2016-01-15 16:26:23
 tags: AMD、CMD、commonjs
 categories: web
 ---

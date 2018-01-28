@@ -1,6 +1,7 @@
 ---
 title: npm-的工作原理
 categories: server
+date: 2015-11-07 10:37:03
 ---
 ### 包(Package)和模块(Module)  
 

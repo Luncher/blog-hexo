@@ -1,6 +1,7 @@
 ---
 title: Blob
 categories: web
+date: 2016-10-02 10:30:03
 ---
 &nbsp;&nbsp;&nbsp;&nbsp;`Blob`(Binary Large Object)术语最初来自数据库，早期数据库因为要存储声音、图片、以及可执行程序等二进制数据对象所以给该类对象取名为`Blob`。
 &nbsp;&nbsp;&nbsp;&nbsp;在`Web`领域，`Blob`被定义为包含只读数据的类文件对象。`Blob`中的数据不一定是`js`原生数据形式。常见的`File`接口就继承自`Blob`，并扩展它用于支持用户系统的本地文件。
