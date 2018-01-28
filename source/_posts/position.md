@@ -1,8 +1,10 @@
 ---
 title: position
 date: 2016-08-02 23:04:37
-tags: position layout
 categories: web
+tags: 
+  - position 
+  - layout
 ---
 
 提到`web`控件的布局(`layout`)，`position`的概念必须理清楚。简单对`position`属性的基本概念做一个总结吧！

@@ -1,7 +1,9 @@
 ---
 title: CSS-动画详解
 date: 2016-09-30 10:16:04
-tags: transition animation
+tags: 
+ - transition 
+ - animation
 categories: web
 ---
 

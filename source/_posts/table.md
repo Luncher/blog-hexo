@@ -1,7 +1,10 @@
 ---
 title: table
 date: 2016-08-07 19:09:38
-tags: css html table
+tags: 
+  - css 
+  - html 
+  - table
 categories: web
 ---
 
