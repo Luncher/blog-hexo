@@ -2,5 +2,5 @@ public
 .deploy_git
 .vscode
 node_modules
-themes
+themes/jacman/.git
 db.json
