@@ -1,5 +1,5 @@
 ---
-title: nginx反向代理配置
+title: nginx反向代理基本配置
 date: 2018-05-20 10:08:42
 tags: 
   - nginx
