@@ -105,12 +105,6 @@ https://manual.macromates.com/en/snippets
 你可以按下`ctrl+p`(快速打开)输入`ext install sni`,会列出一系列`snippet`。  
 `enjoy it :) `  
 
-> 
-这里有个重要的建议：
-尽量不要直接使用别人写好的 Snippets，要自己写、自己敲；而别人写好的，尽量只用来参考。
-无论你学什么语言（或者框架），就一定要在学习的过程中不断添加积累自己关于那个语言（或者框架）的 Snippets，这是一个自己给自己“添麻烦”的过程，但这种所谓的“麻烦”，其实是一种刻意训练，不做其实是偷懒，偷懒这东西，真心不划算的。
-
-**引用自李笑来老师**  
 
 ## 任务：  
 - 到https://marketplace.visualstudio.com/vscode找最常用的包试一试
