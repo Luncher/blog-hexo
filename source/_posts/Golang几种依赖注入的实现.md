@@ -1,6 +1,6 @@
 ---
 title: Golang几种依赖注入的实现
-date: 2019-03-06 23:20:40
+date: 2018-12-26 23:20:40
 tags: golang
 categories: server
 ---
