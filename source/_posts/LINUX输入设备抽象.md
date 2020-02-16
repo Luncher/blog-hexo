@@ -213,6 +213,6 @@ static RET_E source_input_dispatch(EVENT_SOURCE_T* pstThiz)
 
 鼠标左键按下提起事件捕获：
 
-![mouse](/img/linux-mouse.png)
+![mouse](/images/linux-mouse.png)
 
 其他事件效果也是类似。

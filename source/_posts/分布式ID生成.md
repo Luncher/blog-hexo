@@ -24,7 +24,7 @@ redis是一个单进程单线程的架构（不考虑到快照备份、数据同
 
 ### Twitter`snowflake`算法
 
-![snowflake](/img/snowflake)
+![snowflake](/images/snowflake)
 
 `snowflake`生成一个64位的数值，前41bit是一个时间戳，精确到毫秒，中间10个bit用于表示机器组，一个集群最多可以表示1024台机器，后12bit表示随机数。2^12=4096，即：每台机器每毫秒最多可以生成4096个ID。
 

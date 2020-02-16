@@ -322,7 +322,7 @@ server {
 
 letsencrypt原理图：
 
-![letEncrypt](/img/letEncrypt原理图.png)
+![letEncrypt](/images/letEncrypt原理图.png)
 
 >LetEncrypt会发送请求到`ACME`运行的服务器，校验所有权是否合法。
 

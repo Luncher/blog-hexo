@@ -5,7 +5,7 @@ tags: http, cheatsheet
 categories: server 
 ---
 
-![http-cheatsheet](/img/http-cheatsheet.png)
+![http-cheatsheet](/images/http-cheatsheet.png)
 
 在线文档链接：[http-cheatsheet](https://www.processon.com/mindmap/5bf9300ae4b04dd279934191)
 

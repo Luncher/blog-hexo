@@ -43,13 +43,13 @@ REST 风格是现在使用最广泛的 API 设计规范。全称：Representatio
 
 + 微信小程序对 API 接口的要求：
 
-![mp-https]](/img/mp-https.jpg)
+![mp-https]](/images/mp-https.jpg)
 
 
 ##### 2、域名
 > API 可以使用专有域名，如：`https://api.example.com`。也可以跟随在主域名下通过路径的前缀来区分：`https://example.com/api`。`GitHub` 的 `API Host`：
 
-![github-api-schema](/img/github-api-schema.jpg)
+![github-api-schema](/images/github-api-schema.jpg)
 
 
 ##### 3、版本
@@ -73,9 +73,9 @@ REST 风格是现在使用最广泛的 API 设计规范。全称：Representatio
 
 七牛 `portal` 的登录和登出接口：
 
-![qiniu-signin](/img/qiniu-signin.jpg)
+![qiniu-signin](/images/qiniu-signin.jpg)
 
-![qiniu-signout](/img/qiniu-signout.jpg)
+![qiniu-signout](/images/qiniu-signout.jpg)
 
 
 
@@ -83,7 +83,7 @@ REST 风格是现在使用最广泛的 API 设计规范。全称：Representatio
 
 `Github` 的接口：
 
-![github-signin](/img/github-signin.jpg)
+![github-signin](/images/github-signin.jpg)
 
 ---
 
@@ -91,7 +91,7 @@ REST 风格是现在使用最广泛的 API 设计规范。全称：Representatio
 
 API 系统框图：
 
-![api-overview](/img/api-overview.jpg)
+![api-overview](/images/api-overview.jpg)
 
 
 随着需求不断迭代，API 接口也在不断的演化。API 设计应该尽量兼容之前的版本。因为客户端通常包含了：Android、IOS、Web。客户端软件通常安装在用户机器上，当 服务器更新版本，API 接口升级的时候，用户必须升级产品到最新的版本才能正常使用。当然我们可以在老版本的客户端要求用户强制升级，但是这样会带来比较糟糕的用户体验。正确的做法是，服务器尽量兼容最新的 2-3 个版本的 API 接口。同时做好客户端版本用户数量的统计，当低版本的客户端使用量降低到一定程度的时候，服务器再考虑强制用户升级并且废弃老版本的 API 接口。
@@ -155,7 +155,7 @@ API 系统框图：
 2、角色与权限的指派；
 3、权限控制项的管理；
 
-![rbac.jpg](/img/rbac.jpg)
+![rbac.jpg](/images/rbac.jpg)
 
 + API 层的日志（ Logging ），要保证不记录任何敏感信息
 > 例如说：登录的接口把账号密码写到url上，写入了日志。

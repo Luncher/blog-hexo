@@ -8,6 +8,6 @@ tags:
 categories: javascript
 ---
 
-![ES6 CheatSheet](/img/javascript-prop-iter.png)
+![ES6 CheatSheet](/images/javascript-prop-iter.png)
 
 在线连接: [ES6 Property iter CheatSheet](https://www.processon.com/mindmap/5ad82c3de4b0518eacbeee90)

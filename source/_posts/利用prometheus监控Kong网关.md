@@ -15,7 +15,7 @@ Prometheus作为目前云生态环境下炙手可热的监控报警平台，目�
 
 首先在Kong后台配置一个[HttpLogPlugin](https://getkong.org/plugins/http-log/?_ga=2.105865475.1226178032.1511256708-1617277625.1509955587)插件。
 
-![kong插件列表](/img/kong-plugin.jpg)
+![kong插件列表](/images/kong-plugin.jpg)
 
 Prometheus要求exporter提供一个`/metrics`的`endPoint`供给Prometheus Main Server调用，定时拉取当前网关的各项指标。而kong网关一端利用一个`HttpLogPlugin`插件定时把数据抛到`exporter`:
 

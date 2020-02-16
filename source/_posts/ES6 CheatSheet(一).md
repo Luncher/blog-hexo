@@ -7,6 +7,6 @@ tags:
 categories: javascript
 ---
 
-![ES6 CheatSheet](/img/ES6-part-one.png)
+![ES6 CheatSheet](/images/ES6-part-one.png)
 
 在线连接: [ES6 CheatSheet](https://www.processon.com/mindmap/5ad33dffe4b02dfcf9a52ca3)
