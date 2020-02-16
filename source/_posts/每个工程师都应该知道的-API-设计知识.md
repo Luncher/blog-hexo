@@ -1,6 +1,16 @@
 ---
 title: 每个工程师都应该知道的 API 设计知识
 date: 2019-09-20 23:20:47
+categories: web
+---
+
+REST 风格是现在使用最广泛的 API 设计规范。全称：Representational State Transfer（表现层状态转移）。
+
+<!-- more -->
+
+---
+title: 每个工程师都应该知道的 API 设计知识
+date: 2019-09-20 23:20:47
 tags: api, rest
 categories: web
 ---

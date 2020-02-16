@@ -7,7 +7,7 @@ title: I am lin chen
 subtitle: Keep It Simple
 description: we are all witness!
 author: clin
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 avatar: /images/avatar.jpg
 
@@ -71,4 +71,4 @@ deploy:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jacman
+theme: icarus
