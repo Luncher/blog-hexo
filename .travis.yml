@@ -15,6 +15,9 @@ script:
 
 after_script:
   - cd ./public
+  - pwd
+  - git status
+  - git remote -v
   - git init
   - git config user.name "chen"
   - git config user.email "gakiclin@gmail.com"
