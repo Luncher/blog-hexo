@@ -1,7 +1,7 @@
 ---
 title: CSSMastery读书笔记二-为样式找到应用目标
 date: 2016-08-21 21:47:52
-tags: css-mastery
+tags: css
 categories: web
 ---
 

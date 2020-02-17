@@ -1,7 +1,7 @@
 ---
 title: flex-box-xmind
 date: 2016-07-31 22:10:36
-tags: flexbox xmind
+tags: css
 categories: web
 ---
 

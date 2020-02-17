@@ -1,7 +1,7 @@
 ---
 title: ScrollTo动画
 date: 2016-08-26 10:05:18
-tags: css scrollTo
+tags: css
 categories: web
 ---
 

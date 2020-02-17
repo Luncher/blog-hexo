@@ -1,7 +1,7 @@
 ---
 title: CSSMastery读书笔记(一)
 date: 2016-08-20 15:04:29
-tags: css-mastery
+tags: css
 categories: web
 ---
 

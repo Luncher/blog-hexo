@@ -1,7 +1,7 @@
 ---
 title: CSS-background
 date: 2016-08-25 10:44:09
-tags: css background
+tags: css
 categories: web
 ---
 
