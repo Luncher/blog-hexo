@@ -9,8 +9,6 @@ categories: web
 
 Linking项目里存在一项设备视频回放功能，回放的视频文件格式为`m3u8`。`m3u8`是一种基于[HTTP Live Streaming](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)协议的文件视频格式。对于该类型的视频文件解析步骤如下：
 
-<!-- more -->
-
 ![hls.jpg](/img/hls.jpg)
 
 HLS依赖浏览器提供的[Media Source Extensions API](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API)
