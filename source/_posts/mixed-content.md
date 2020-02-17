@@ -9,7 +9,7 @@ categories: web
 
 Linking项目里存在一项设备视频回放功能，回放的视频文件格式为`m3u8`。`m3u8`是一种基于[HTTP Live Streaming](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)协议的文件视频格式。对于该类型的视频文件解析步骤如下：
 
-![hls.jpg](/images/hls.jpg)
+![hls.jpg](/img/hls.jpg)
 
 HLS依赖浏览器提供的[Media Source Extensions API](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API)
 来完成组合，使之能够使用`<audio>`和`<video>`来进行播放。所以第一步需要`Browser API Check`。可以通过[caniuse](https://caniuse.com/#feat=mediasource)来查询API的支持情况。
@@ -83,9 +83,9 @@ W3C标准组织按照混合内容被中间人篡改攻击时的损害程度分�
 
 #### 安全小锁
 如果站点所有的资源都是通过安全的`https`请求加载，那么在地址栏将会看到一个小锁：
-![mixed-content-http1.png](/images/http1.jpg)
+![mixed-content-http1.png](/img/http1.jpg)
 反之会看到小锁变成一个类似惊叹号的图标：
-![mixed-content-http2.png](/images/http2.jpg)
+![mixed-content-http2.png](/img/http2.jpg)
 
 浏览器地址栏的小锁就像是一个指示器, 告知用户当前网页是否存在安全风险。
 地址栏的指示器主要有三个状态：
@@ -105,31 +105,31 @@ W3C标准组织按照混合内容被中间人篡改攻击时的损害程度分�
 #### 加载`Optionally-Blockable`资源
 浏览器默认加载`Optionally-Blockable`的资源，但是会给出一些警告，例如把全站https的网页内的某个图片换成http请求：
 
-![mixed-content-http3](/images/http3.jpg)
+![mixed-content-http3](/img/http3.jpg)
 
 地址栏的小锁消失了。同时打开console，可以看到浏览器给出的一个警告：
 
-![mixed-content-http4](/images/http4.jpg)
+![mixed-content-http4](/img/http4.jpg)
 
 
 #### 加载`Blockable`资源
 把网页的一个css资源链接从`https`换成`http`:
 
-![mixed-content-http5](/images/http5.jpg)
+![mixed-content-http5](/img/http5.jpg)
 
 可以看到，浏览器默认禁止加载此类资源。
 
 #### 严格模式
 
 编辑网页，加入启用严格模式的`meta`标签：
-![mixed-content-http6](/images/http6.jpg)
+![mixed-content-http6](/img/http6.jpg)
 
 修改图片链接地址：
 
-![mixed-content-http7](/images/http7.jpg)
+![mixed-content-http7](/img/http7.jpg)
 
 查看浏览器终端：
-![mixed-content-http8](/images/http8.jpg)
+![mixed-content-http8](/img/http8.jpg)
 
 在启用严格模式情况下，全站资源都被当作`Blockable`类型处理，浏览器默认报错，不允许加载这些资源。
 
