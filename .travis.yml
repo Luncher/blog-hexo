@@ -16,6 +16,7 @@ script:
 after_script:
   - cd ./public
   - pwd
+  - ls -l
   - git status
   - git remote -v
   - git init
