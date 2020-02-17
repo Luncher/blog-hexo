@@ -16,6 +16,8 @@ categories: server
 
 为了让`nginx`能正常运行，必须设置它的一些基本配置，`nginx`基本配置主要包含了`nginx`正常运行的配置，包括了日志，以及对master/worker进程的控制、`nginx`服务监听分发等。
 
+<!-- more -->
+
 ```nginx
 user nobody; #worker进程启动用户
 

@@ -7,6 +7,8 @@ categories: web
 
 create-react-app默认使用`js`作为开发语言，`ts`拥有强大的类型系统，更加适用于大型项目开发。许多面向对象的语言都有装饰器的语法，目前js也有相关的提案[decorators](https://github.com/tc39/proposal-decorators)。
 
+<!-- more -->
+
 #### 创建新的应用：
 
 1. 直接创建`ts`项目

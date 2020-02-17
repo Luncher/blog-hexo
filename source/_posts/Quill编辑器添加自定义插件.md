@@ -9,6 +9,8 @@ tags:
 
 在前端领域，富文本编辑器一直是一个比较复杂的模块。技术选型的时候，如果没有擦亮眼睛看清楚，一不小心就掉入的坑中。之前用过[summernote](https://github.com/summernote/summernote)最后因为业务需求逐渐复杂，一些关键特性没法支持，自己拓展起来非常痛苦。这次新项目开发的时候仔细调研了下当下比较好的web富文本编辑器主要有：[Quill](https://github.com/quilljs)，以及国内百度前端团队推出的[ueditor](https://github.com/fex-team/ueditor)。经过一番对比之后，选择了`Quill`作为最终方案。
 
+<!-- more -->
+
 `Quill`实现了一套类似的DOM Tree。通过[parchment](https://github.com/quilljs/parchment)来实现。一颗`parchment` Tree包含了多个`Blot`，可以类比为DOM节点的概念。`parchment`提供了三种类型的`Blot`: `Inline Blot`、 `Block Blot`、`Embed Blot`。前两种分别对应`html`的行内元素、块元素，第三种类型是一个封装类型，`Quill`内置类型如：`Video`通过继承这个类型来实现。
 
 `Quill`默认没有提供`audio`类型的实现。所以通过扩展`Embed Blot`来实现一个。

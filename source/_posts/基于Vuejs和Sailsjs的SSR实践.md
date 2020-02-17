@@ -11,6 +11,7 @@ categories: web
 
 Sails作为老牌Node.js框架,师从ROR,在Node.js社区也有一定的影响力。我们团队在微服务化之后选中其作为web开发基础框架。最近在做代码下发服务的时候需要一个后台管理页面，所以去了解了一下怎么利用sailsjs做服务器端渲染。
 
+<!-- more -->
 
 服务器端渲染依赖于`webpack`编译出的`server-bundle`文件。为了保证renderer的单例，所以在sailsjs启动的时候创建：
 

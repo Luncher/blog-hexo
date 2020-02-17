@@ -10,6 +10,8 @@ tags:
 提到`web`控件的布局(`layout`)，`position`的概念必须理清楚。简单对`position`属性的基本概念做一个总结吧！
 以下文档参考了：[CSS-tricks](https://css-tricks.com/almanac/properties/p/position/)、[W3School](http://www.w3schools.com/css/css_positioning.asp)。
 
+<!-- more -->
+
 ---
 
 # `position`基本属性：

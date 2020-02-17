@@ -5,6 +5,8 @@ tags: mobx
 categories: web
 ---
 
+<!-- more -->
+
 ![MobX-知识图谱](/images/MobX-知识图谱.png)
 
 在线连接: [MobX-知识图谱](https://www.processon.com/mindmap/5c667601e4b07fada4e735d5)

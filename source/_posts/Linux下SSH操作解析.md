@@ -19,6 +19,8 @@ ps:fedora下的一些基本服务都是通过systemctl restart/stop xxx.service�
 ### 3.SSH配置文件路径：
 /etc/ssh/sshd_config。配置ssh连接的端口号，权限等信息
 
+<!-- more -->
+
 ### 4.关闭防火墙
 systemctl disable firewalld.service
 

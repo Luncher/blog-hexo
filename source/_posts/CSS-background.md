@@ -17,6 +17,8 @@ categories: web
 - background-attachment
 - background-clip
 
+<!-- more -->
+
 ---
 
 ## `background-color`

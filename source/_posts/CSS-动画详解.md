@@ -12,6 +12,8 @@ categories: web
 
 `CSS animation`使用十分广泛，特此来做一个详细的总结。
 
+<!-- more -->
+
 ---
 
 ## 通过`transiton`属性控制动画

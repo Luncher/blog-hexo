@@ -16,6 +16,7 @@ categories: web
 - 5、如果只有一个设置为`auto`，其会根据公式计算。
 - 6、如果参数之和大于父元素的`width`且`margin-right`设置为`auto`，则会重置`margin-right`以适配公式(如果没有设置`margin-right`为`auto`则会保持设置值)
 
+<!-- more -->
 ---
 
 ## 块级元素的垂直格式化

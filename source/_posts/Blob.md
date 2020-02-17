@@ -3,8 +3,11 @@ title: Blob
 categories: web
 date: 2016-10-02 10:30:03
 ---
+
 &nbsp;&nbsp;&nbsp;&nbsp;`Blob`(Binary Large Object)术语最初来自数据库，早期数据库因为要存储声音、图片、以及可执行程序等二进制数据对象所以给该类对象取名为`Blob`。
 &nbsp;&nbsp;&nbsp;&nbsp;在`Web`领域，`Blob`被定义为包含只读数据的类文件对象。`Blob`中的数据不一定是`js`原生数据形式。常见的`File`接口就继承自`Blob`，并扩展它用于支持用户系统的本地文件。
+
+<!-- more -->
 
 &nbsp;&nbsp;&nbsp;&nbsp;构建一个`Blob`对象通常有三种方式：1、通过`Blob`对象的构造函数来构建。2、从已有的`Blob`对象调用`slice`接口切出一个新的`Blob`对象。3、`canvas` API toBlob方法，把当前绘制信息转为一个`Blob`对象。下面分别看看3种方式的实现：
 

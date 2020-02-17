@@ -8,6 +8,8 @@ categories: web
 CSS3引入了强大的弹性布局(flex-box)，解决了传统CSS布局效率低下的问题。说句实话，学了一个礼拜多的CSS知识，我到现在都还没搞清楚，float\display\clear。
 三个布局参数之间的联系。查资料的过程中发现了`flex-box`这一神器，仿佛抓住了救命稻草。
 
+<!-- more -->
+
 ---  
 
 兼容性探测：

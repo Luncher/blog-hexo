@@ -27,6 +27,8 @@ worker_processes  2;
 pid /home/www/nginx/nginx.pid;
 ```
 
+<!-- more -->
+
 #### 错误日志
 
 ```shell

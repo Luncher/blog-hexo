@@ -8,6 +8,8 @@ date: 2015-10-07 10:37:03
 
 Centos系统内建了一个强大的防火墙，通常又被称为`iptables`。准确的说应该叫iptables/netfilter。iptables工作于用户层，用户通过命令行给防火墙预定规则表。netfilter是一个内核模块，完成实际的过滤工作。有许多GUI软件方便用户来设置防火墙规则，但都缺乏一定的灵活性，并且限制用户了解其中真正发生了什么。
 
+<!-- more -->
+
 在开始配置Iptables之前，我们需要知道知道一些它是如何工作的。Iptables利用到了 IP 地址、协议(tcp,udp,icmp)和端口。我们不需要成为这方面的专家，但多少知道一些有助于理解iptables是如何工作的。
 
 Iptables给预定义的链路(INPUT、OUTPUT、FORWARD)设置规则。链路校验IP包并根据定义的规则对其做相应的处理，如：接受、丢弃等。对包的处理又被称为：`targets`。两个通常用到的`target`一个是`DROP`用于丢弃一个包、一个是`ACCEPT`用于接受一个包。

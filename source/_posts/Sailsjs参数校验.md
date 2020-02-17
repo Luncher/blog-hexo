@@ -15,6 +15,8 @@ tags:
 
 首先利用`hapijs`团队开源的[joi](https://github.com/hapijs/joi)模块，编写action schema:
 
+<!-- more -->
+
 ```javascript
 const Joi = require('joi')
 

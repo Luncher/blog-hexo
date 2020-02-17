@@ -10,6 +10,8 @@ date: 2016-05-22 11:30:24
 
 下载基于`electron`打包的[HolaStudio](http://cdn.studio.holaverse.cn/dist/)。   
 
+<!-- more -->
+
 ---  
 
 ### 使用`webpack`编译项目   

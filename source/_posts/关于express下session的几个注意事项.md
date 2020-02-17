@@ -1,6 +1,6 @@
 ---
 title: 关于express下session的几个注意事项
-categories: server
+categories: [server, nodejs]
 date: 2016-10-07 19:30:20
 ---
 
@@ -10,6 +10,8 @@ date: 2016-10-07 19:30:20
 - resave  :  强制把session写入存储，即使session在整个请求过程中都没有被修改。  
 - saveUninitialized  : 保存新建的但没有被改动的session。  
 - secret : 加密sessionID cookie的密钥。  
+
+<!-- more -->
 
 
 ---  

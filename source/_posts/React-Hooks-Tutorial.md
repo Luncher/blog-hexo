@@ -16,6 +16,7 @@ categories: web
 + 复杂组件难以理解，嵌套过深(需要引入`HOC`、`render props`等概念)
 + 类相比函数更加难以理解
 
+<!-- more -->
 
 ## Hooks详解 
 
