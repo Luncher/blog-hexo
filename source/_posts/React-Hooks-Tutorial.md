@@ -1,7 +1,7 @@
 ---
 title: React Hooks Tutorial
 date: 2019-03-13 21:53:36
-tags: react
+tags: [react,hooks]
 categories: web
 ---
 
