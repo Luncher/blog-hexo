@@ -9,14 +9,17 @@ categories: web
 - typescript latest
 - react 16.8+
 
+通过这篇文章，希望能够熟悉 `Context` 的各种使用姿势，以及消费 `Context Value` 的时候需要注意的点。
+
+<!-- more -->
+
 ### Context 定义
 
-首先来定义一个 `context`
+* 首先来定义一个 `context`
 
 `context.ts`:
 
 ```ts
-
 import React from "react";
 
 interface IValue {
@@ -26,18 +29,12 @@ interface IValue {
 const context = React.createContext<IValue>(null);
 
 export default context;
-
 ```
 
-<!-- more -->
+>`createContext` 接受一个泛形，表示 `context` 值的类型，这里还给出了默认值是 `null`。注意 `tsconfig` 的 `strictNullChecks` 要先关闭 :)。创建完毕，导出这个 `context` 实例。
 
->`createContext` 接受一个范形，表示 `context` 值的类型，这里还给出了默认值是 `null`。注意 `strictNullChecks` 要先关闭 :)。创建完毕，导出这个 `context` 实例。
 
----
-
-### 在无状态函数组件内消费 Context
-
-先定义一个父组件：
+* 再定义一个父组件：
 
 ```tsx
 interface IState {
@@ -66,9 +63,13 @@ class App extends React.Component<{}, IState> {
 
 ```
 
->`context` 提供数据的使用姿势：`MyContext.Provider`, 通过固定属性 `value` 传入数据, 这里传入的是一个对象。每次点击按钮更新 `count`, `context` 传入新的值会导致消费 `context` 的组件重新渲染（该行为不会受到 `shouldComponentUpdate` 影响）。
+>`context` 提供数据的使用姿势：`MyContext.Provider`, 通过固定属性 `value` 传入数据, 这里传入的是一个对象。每次点击按钮更新 `count`, `context` 传入新的值会导致 **消费 `context` 的组件** 重新渲染（该行为不会受到 `shouldComponentUpdate` 影响）。
 
-再定义一个普通函数组件：
+---
+
+### render Props 消费 Context
+
+* 定义一个普通函数组件：
 
 ```tsx
 import MyContext from './context'
@@ -82,13 +83,17 @@ const Children1: React.FC = () => {
 };
 ```
 
->`MyContext.Consumer` 是 `context` 的使用姿势之一, 它接受一个函数，这个函数的参数是 `Context.Provider` 注入的值。
+>`MyContext.Consumer` 是 `context` 的使用姿势之一 ([render-props](https://reactjs.org/docs/render-props.html)), 它接受一个函数，这个函数的参数是 `Context.Provider` 注入的值。
+
+#### 注意
+
+>这个例子中，消费 `context` 的实际上是 `MyContext.Consumer`。所以当 `context` 内容发生变化的时候，`Children1` 并不会 `re-render`。
 
 ---
 
 ### 使用 Hooks 消费 Context
 
-再定义一个组件：
+* 再定义一个组件：
 
 ```tsx
 import MyContext from './context'
@@ -104,7 +109,7 @@ function Children4() {
 
 ### 在 Class 组件内消费 Context
 
-先定义一个 `Class` 组件：
+* 先定义一个 `Class` 组件：
 
 ```tsx
 import MyContext from './context'
@@ -125,7 +130,7 @@ class Children3 extends React.Component {
 ### Context 性能优化
 
 性能优化简单可以概括为一句话：
->避免不必要的 `re-render`
+>避免做重复的事情。
 
 
 #### 避免 Provider 的 value 重复产生新值
@@ -170,7 +175,7 @@ value={{ count: this.state.count }}
 
 #### 避免重新 `createElement`
 
-再来新增一段代码：
+* 再来新增一段代码：
 
 ```tsx
 // 注意：该组件没有消费 context
@@ -197,7 +202,7 @@ render() {
 //...
 ```
 
-点击按钮，控制台输出：
+* 点击按钮，控制台输出：
 
 ```shell
 render
@@ -207,7 +212,7 @@ render Children5
 
 >`Children5` 并没有消费 `context`。但是每次父组件 `re-render` 的时候，它也 `re-render` 了一次。
 
-把父组件的 `render` 函数用 [babel](https://babeljs.io/) 编译一下得到：
+* 把父组件的 `render` 函数用 [babel](https://babeljs.io/) 编译一下得到：
 
 ```js
   render() {
@@ -225,8 +230,9 @@ render Children5
 
 有没有什么办法可以避免这个行为呢？答案是有的：
 
-* 把 `Provider` 的内容提到父组件之外，使用 `children` 传入：
+#### 把 `Provider` 的内容提到父组件之外，使用 `children props` 传入：
 
+* 改写 `Content`
 ```tsx
 const Content: React.FC = () => {
   return (
@@ -251,13 +257,13 @@ render(<App children={<Content />} />, document.getElementById("root"));
 //...
 ```
 
-点击按钮，控制台输出：
+* 点击按钮，控制台输出：
 
 ```shell
 render
 ```
 
-使用 `babel` 在看一下结果：
+* 使用 `babel` 在看一下结果：
 
 ```js
 const Content = () => {
@@ -270,6 +276,56 @@ render(React.createElement(App, {
 ```
 
 > 父组件的 `children` 是一个固定值。不会在父组件重新渲染的时候变更，从而避免了不必要的 `re-render`。
+
+#### 使用 React.memo/React.PureComponent
+
+* 重写 `Content` 组件：
+
+```tsx
+
+const Content: React.FC = React.memo(() => {
+    console.log('render Content')
+    return (
+        <>
+            <Children1 />
+            <Children5 />
+        </>
+    )
+})
+```
+
+* 还原父组件的 `render` 函数：
+
+```tsx
+
+<MyContext.Provider value={this.state}>
+    <Content />
+</MyContext.Provider>
+
+```
+
+点击按钮，控制台输出：
+
+```tsx
+render
+```
+
+---
+
+### 总结
+
+#### 使用 Content 的三种姿势
+
+* render props 的方式
+* Hooks 的方式
+* Class Component 的方式
+
+
+#### 性能优化
+
+* 避免 `context` 每次创建一个 `value` 对象
+* 使用 `children props` 替换 `jsx`
+* 使用 `PureFunction/React.memo` 包装组件
 
 ---
 
