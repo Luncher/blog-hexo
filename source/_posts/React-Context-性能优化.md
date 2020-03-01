@@ -7,7 +7,7 @@ categories: web
 
 ### 背景
 
-`context` 的出现良好的解决了垮多个层级的组件传递 `props` 的问题。 但是在使用 `context` 的过程中，绝大多数开发者都发现 `context` 有一个不太优雅的点在于：
+`context` 的出现良好的解决了垮多个层级的组件传递 `props` 的问题。 但是在使用 `context` 的过程中，绝大多数开发者都发现 `context` 有一个不太优雅的点：
 > 只要 `context` 的 `value` 发生变化，所有消费该 `context` 的组件都会 `re-render`。
 
 <!-- more -->
