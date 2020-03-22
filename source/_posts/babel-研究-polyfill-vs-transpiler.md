@@ -1,12 +1,14 @@
 ---
 title: babel 研究- polyfill vs transpiler
 date: 2020-03-22 15:23:46
-tags: [babel,polyfill]
+tags: [babel,webpack]
 categories: web
 ---
 
 ### 背景
 `javascript` 语言发展迅速，各种新特性层出不穷。与之相对应的各个 `runtime` 的支持程度各不相同。通过 [Node Green](https://node.green/#ES2018) 可以发现最新版本（Node 14）几乎完全支持了 `ES2018`、`ES2019`、`ES2020` 所有的特性。而在浏览器端，需要面对的环境差异比较大，因为用户留存的问题又不得不支持。在这样一种大环境下，`bolyfill` 和 `transpiler` 的作用就凸显出来了。
+
+<!-- more -->
 
 ---
 
