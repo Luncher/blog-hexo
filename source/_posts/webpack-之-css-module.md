@@ -17,7 +17,7 @@ categories: web
 
 假设项目使用 [less](http://lesscss.org/)。在 `webpack` 环境下，通常编译过程如下：
 
-![e203015874c05577bfccbd94bd88a1b7.png](evernotecid://C266EE4A-E61E-46AC-A334-E5BBEC75D8FE/appyinxiangcom/18857699/ENResource/p43)
+![less-progress.png](/images/webpack-css-module/less-progress.png)
 
 + less-loader
 >负责编译 `less` 语法，输出 `css` 语法的样式文件
