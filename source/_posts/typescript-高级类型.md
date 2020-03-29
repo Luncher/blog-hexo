@@ -158,11 +158,17 @@ type MutableITest = Mutable<Itest>
 `ts` 内置的 `homomorphic` 类型如：
 
 + Partial
-> type Partial<T> = {[P in keyof T]?: T[P]}
+```ts
+type Partial<T> = {[P in keyof T]?: T[P]}
+```
 + Required
-> type Required<T> = {[P in keyof T]-?: T[P]}
+```ts
+type Required<T> = {[P in keyof T]-?: T[P]}
+```
 + Pick
-> type Pick<T, K extends keyof T> = {[P in K]: T[P]}
+```ts
+type Pick<T, K extends keyof T> = {[P in K]: T[P]}
+```
 + ...
 
 #### non homomorphic 类型
