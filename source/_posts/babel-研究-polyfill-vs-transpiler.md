@@ -227,9 +227,9 @@ function component() {
 
 前面提到 `侵入式` 的 `polyfill` 实现，好处是方便快捷。只需要在项目的入口处（`entry` 模式）`import core-js` ，或者压根不需要 `import corejs` (`usage` 模式)，来达成 `polyfill` 的目的。但是这种实现是有代价的，因为存在 [global pollution](https://babeljs.io/docs/en/babel-plugin-transform-runtime#technical-details) 的问题。如果项目工程是类库，那么这种方案会污染该库的使用方。
 
-这个使用，[babel-plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime) 这个库可以良好的解决这个问题。通过官网发现，`transform-runtime` 主要有两个目的：
+这个时候，[babel-plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime) 这个库可以良好的解决这个问题。通过官网发现，`transform-runtime` 主要有两个目的：
 
-1. 提供工具函数实现，如 `_extend` 等
+1. 提供工具函数实现，如 `_extend` 等(模拟 `class` 继承)
 2. 提供一个沙盒环境（`sandboxed environment`）在不污染全局作用域的前提下，达到 `polyfill` 的目的。
 
 `transform-runtime` 通过 `corejs` 配置项来控制 `polyfill` 的支持能力，为了达成以上两个目的，还需要额外的模块来辅助：
@@ -240,7 +240,7 @@ function component() {
 + @babel/runtime-corejs-2 (当 `corejs` 配置为 `2`)
 > 等同于 corejs + `@babel/runtime`，需要注意的是，该模式只能 `polyfill` 全局变量，不能 `polyfill` `instance method`
 
-+ @babel/runtime-corejs-2 (当 `corejs` 配置为 `3`)
++ @babel/runtime-corejs-3 (当 `corejs` 配置为 `3`)
 > 等同于 `core-pure-js` + `@babel/runtime`，很好的解决了 `polyfill` `instance method` 等问题，详见 [update to `corejs@3`](https://github.com/babel/babel/pull/7646)
 
 看个例子，以 `corejs: 2` 为例：
@@ -271,7 +271,7 @@ function component() {
   var element = document.createElement('div');
 }
 ```
->可以看到 `new Set` ，被替换成了 `polyfill` 实现。
+>可以看到 `new Set` ，被替换成了 `polyfill` 实现。其他配置项就不一一展开了。
 
 ---
 
@@ -282,7 +282,7 @@ function component() {
 + `babel` 目前的语法转换通过 `preset-env` 来完成，但是 `stage-n` 的特性如 `class properties`等，只能自己安装插件来完成。
 + `babel` 对 `polyfill` 的支持主要依赖于 `corejs` 和 `regenerator runtime`。`7.4` 版本之后 `babel/polyfill` 已经不推荐使用了，取而代之的是：
     1. `preset-env` 的方式，但是存在 `pollute the global scope` 的问题
-    2. `transform-runtime` 的方案，可以良好的解决这个问题，但是如果需要支持 `instance method` 等特性，需要使用 `babel/babel-runtim-corejs3`
+    2. `transform-runtime` 的方案，可以良好的解决这个问题，如果需要支持 `instance method` 等特性，记得使用 `babel/babel-runtim-corejs3`
 
 
 ---
