@@ -4,12 +4,10 @@ date: 2020-04-06 21:10:43
 tags: [strict-mode,tsconfig]
 categories: [web,typescript]
 ---
-
 ### 背景
 
 `ts` 编译器包含严格模式（`strict mode`）一系列配置。通过这些配置，能限制一些不良的编码习惯，以及可能由于思维漏洞而导致的 `BUG`，把问题在编译/编码阶段就暴露出来而不是等到上线之后由客户来反馈 :)。
 强烈建议尽可能的开启部分或者全部的严格模式，这对代码质量大有裨益。本文尝试分析 `ts` 的严格模式配置，并提出 `fix` 相关代码的建议。
-
 
 <!-- more -->
 
@@ -46,7 +44,7 @@ function hello(a) {
 [strictNullChecks](https://www.typescriptlang.org/tsconfig#strictNullChecks)
 >有的时候，我们的代码没有区分 `null` 和 `undefined`。但是这样可能在运行时导致一些非预期的行为。毕竟在 `javascript` 的环境下，`null` 和 `undefined` 是两种类型。开启 `strictNullChecks`, `ts` 对于 `null` 和 `undefined` 作为两个类型来看待。
 
-1. `strictNullChecks` 等于 `false`
++ `strictNullChecks` 等于 `false`
 
 ```ts
 let i = 123
@@ -56,7 +54,7 @@ i = undefined
 i = null
 ```
 
-2. `strictNullChecks` 等于 `true`
++ `strictNullChecks` 等于 `true`
 
 ```ts
 let i = 123
@@ -66,7 +64,7 @@ i = undefined
 i = null
 ```
 
-3. `strictNullChecks` 等于 `true` 下的可选属性
++ `strictNullChecks` 等于 `true` 下的可选属性
 
 ```ts
 class A {
@@ -80,7 +78,7 @@ inst.prop = 123
 ```
 >`prop?: number` 等于 `prop: number | undefined`
 
-4. xx is possibly 'undefined'
++ xx is possibly 'undefined'
 
 ```ts
 const arr = [1, 2, 3]
@@ -101,7 +99,7 @@ target.toFixed(2)
 
 看一个例子：
 
-1. `strictFunctionTypes` 等于 `false`
++ `strictFunctionTypes` 等于 `false`
 
 ```ts
 type callFunc = (arg: number | string) => boolean | object
@@ -113,7 +111,7 @@ function testFunc1(arg: number): boolean {
 let test1: callFunc = testFunc1
 ```
 
-2. `strictFunctionTypes` 等于 `true`
++ `strictFunctionTypes` 等于 `true`
 
 ```ts
 type callFunc = (arg: number | string) => boolean | object
@@ -126,7 +124,7 @@ function testFunc1(arg: number): boolean {
 let test1: callFunc = testFunc1
 ```
 
-3. `strictFunctionTypes` 等于 `true` 且 函数类型比函数类型变量具体
++ `strictFunctionTypes` 等于 `true` 且 函数类型比函数类型变量具体
 
 ```ts
 type callFunc = (arg: number) => boolean | object
@@ -147,7 +145,7 @@ let test1: callFunc = testFunc1
 [strictBindCallApply](https://www.typescriptlang.org/tsconfig#strictBindCallApply)
 >顾名思义，这个配置项主要针对的就是 `javascript` 内置的三个方法：`call`、`apply`、`bind`。
 
-1. strictBindCallApply 等于 `false`
++ strictBindCallApply 等于 `false`
 
 ```ts
 function test(a: number) {
@@ -159,7 +157,7 @@ test.apply(null, [false])
 ```
 >函数预期的是 `number` 类型，传一个 `boolean` 绕过了检查
 
-2. strictBindCallApply 等于 `true`
++ strictBindCallApply 等于 `true`
 
 ```ts
 function test(a: number) {
@@ -170,7 +168,7 @@ function test(a: number) {
 test.apply(null, [false])
 ```
 
-3. strictBindCallApply 等于 `true`, 目标参数类型放宽
++ strictBindCallApply 等于 `true`, 目标参数类型放宽
 
 ```ts
 function test(a: number | boolean) {
@@ -258,7 +256,7 @@ class Base {
 
 看个例子：
 
-1. alwaysStrict 等于 `false`
++ alwaysStrict 等于 `false`
 ```ts
 // xx.ts
 console.log('hello world')
@@ -267,7 +265,7 @@ console.log('hello world')
 console.log('hello world');
 ```
 
-2. alwaysStrict 等于 `true`
++ alwaysStrict 等于 `true`
 ```ts
 // yy.ts
 console.log('hello world')
