@@ -220,7 +220,14 @@ function component() {
 > 可以看到，只对该文件使用到的特性（Set），`import` 了对应的polyfill。
 
 + `false`
-> 当 `useBuildIn` 配置成 `false` 的时候，`preset-env` 将不会提供任何 `polyfill` 的功能。
+> 当 `useBuildIn` 配置成 `false` 的时候，`preset-env` 默认将不会提供任何 `polyfill` 的功能。
+> 我们可以在 `webpack` 的 `entry array` 加入 `polyfill` 相关的文件，例如：
+
+```js
+module.exports = {
+  entry: ["@babel/polyfill", "./app/js"],
+};
+```
 
 
 #### 非侵入式
@@ -282,6 +289,9 @@ function component() {
 + `babel` 目前的语法转换通过 `preset-env` 来完成，但是 `stage-n` 的特性如 `class properties`等，只能自己安装插件来完成。
 + `babel` 对 `polyfill` 的支持主要依赖于 `corejs` 和 `regenerator runtime`。`7.4` 版本之后 `babel/polyfill` 已经不推荐使用了，取而代之的是：
     1. `preset-env` 的方式，但是存在 `pollute the global scope` 的问题
+       1. `entry` 模式需要写一个单独的问题在项目的入口文件 `import` 它
+       2. `usage` 模式不需要手动 `import` `polyfill` 文件，但是需要安装对应的包
+       3. `false` 模式，默认不提供 `polyfill` 的能力，但是可以通过把 `polyfill` 作为入口文件(`entry array`)的一部分
     2. `transform-runtime` 的方案，可以良好的解决这个问题，如果需要支持 `instance method` 等特性，记得使用 `babel/babel-runtim-corejs3`
 
 
