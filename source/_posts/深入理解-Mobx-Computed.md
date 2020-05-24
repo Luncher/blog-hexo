@@ -19,6 +19,8 @@ categories: [mobx,statemanager]
 
 基于以上两点，日常开发过程中原则是：**能使用 `computed` 的地方应该尽量使用 `computed`。**
 
+<!-- more -->
+
 ---
 
 ### 基本使用
