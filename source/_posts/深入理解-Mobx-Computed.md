@@ -67,7 +67,7 @@ class Order {
   @observable amount = 1;
   x = 2
 
-  @computed({ keepAlive: true })
+  @computed
   get total() {
     console.log("calc total");
     return this.price * this.amount * this.x;
@@ -87,7 +87,7 @@ inst.x = 4
 ### computed vs autorun
 
 通过上面的了解，`computed` 感觉跟 `autorun` 很像。都用于响应某些 `observable` 属性的变化。其主要差异有以下几点：
-- `computed` 主要用于基于现有属性生成新的属性值，供其他 `observer`（如：`autorun`、`reaction` 等） 消费。
+- `computed` 主要用于基于现有属性生成新的属性值，供其他 `observer`（如：`autorun`、`reaction`、`observer` 等） 消费。
 - `autorun` 基于某些 `observable` 属性的变化作出一些行为，可能是发送请求也可能是打印日志等等
 - `autorun` 需要使用者自己 `dispose`，而 `computed` 由`mobx`内部负责回收，如果 `computed` 消费者不存在的时候，`computed` 会处于 `Suspend` 状态，即：`computed` 依赖的属性变化也不会重新计算生成新的属性值。（当开启 `keepLive` 的时候情况会有所不同，下面会说明）
 
@@ -380,5 +380,4 @@ inst.val2 = 2
 + 日常开发应该尽可能多的使用 `computed` 减少 `mutable` 状态的使用，提升代码的健壮性、降低复杂度
 + `computed` 有两个前置条件：1、依赖 `observable` 属性的变化。2、被 `reaction` 消费（如果有意减少不必要的计算）
 + `computed` 和 `autorun` 有很多相识之处，`computed` 主要用于生成一个新的属性值供消费，`autorun` 用于基于 `observable` 做某些操作。`computed` 会被 `mobx` 优化，也可以根据需要调整 `comparer` 函数。
-+ 解决直接使用 `computed` 有两个方式：`reaction` 转换、`keepAlive`，`keepAlive` 的好处是：延迟计算，也不需要额外的转换，坏处是容易导致内存泄漏，而 `reaction` 的方式容易 `dispose`
-
++ 解决在非 `reaction` 内使用 `computed` 导致重复计算的问题有两个方式：`reaction` 转换如 `autorun`、`keepAlive`，`keepAlive` 的好处是：延迟计算，也不需要额外的转换，坏处是容易导致内存泄漏，而 `reaction` 的方式容易 `dispose`
