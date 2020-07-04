@@ -20,7 +20,7 @@ categories: [typescript]
 
 本文尝试分析日常开发过程中必须熟悉的 `tsconfig` 相关配置知识。
 
-<!-- mode -->
+<!-- more -->
 
 ---
 
