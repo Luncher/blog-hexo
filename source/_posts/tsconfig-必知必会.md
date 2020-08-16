@@ -4,7 +4,6 @@ date: 2020-06-30 22:49:55
 tags:
 categories: [typescript]
 ---
-
 ### 背景
 
 `tsconfig.json` 是 `ts` 项目的配置文件，用于项目的编译。归纳总结，主要包含了几块内容：
@@ -149,6 +148,10 @@ tsc --init
 └── index.js
 ```
 
+注意：
+> 1、虽然 `tsc` 有文件后缀的加载规则，但是可以通过 `include pattern` 只包含指定后缀的文件
+> 2、虽然 `tsc` 会编译 `tsx` 后缀的文件（通过 `allowJs`还会加载 `jsx`）。但是如果想在文件中使用 `jsx` 语法，那么还必须开启 `jsx` 配置项（见下文）。
+
 ---
 
 ### 输出文件
@@ -187,7 +190,7 @@ define("dir2/bar", ["require", "exports"], function (require, exports) {
 });
 ```
 
-可以看的多个源文件被合并成单个文件输出。
+可以看到多个源文件被合并成单个文件输出。
 
 ---
 
@@ -257,6 +260,30 @@ const arr = [1,2,3, [4]].flat()
 警告就消失了。
 
 关于 `polyfill` 和 `transplier` 的差异请参考：[babel-研究-polyfill-vs-transpiler](https://luncher.github.io/2020/03/22/babel-%E7%A0%94%E7%A9%B6-polyfill-vs-transpiler/)，以及：[what-is-the-difference-between-polyfill-and-transpiler](https://stackoverflow.com/questions/31205640/what-is-the-difference-between-polyfill-and-transpiler)。
+
++ jsx
+
+`typescript` 支持 `jsx` 的语法，其包含 `jsx`、`jsx-factory` 两个配置。
+
+`jsx` 有三个可选值：
+
+`preserve`
+> `tsc` 在编译的时候不对 `jsx` 语法进行转换，原样保存到输出文件中。对 `jsx` 语法的转换留给 [babel-plugin](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx/) 等其他工具。该配置下，输出文件是一个 `.jsx`，另：这是默认的配置
+
+`react`
+>把 `jsx` 语法转化为 `React.createElement`。参考 [从-typescript-的角度学习-React-的基本概念](https://luncher.github.io/2020/07/29/%E4%BB%8E-typescript-%E7%9A%84%E8%A7%92%E5%BA%A6%E5%AD%A6%E4%B9%A0-React-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/)，`jsx` 其实是 `createElement` 的语法糖。该配置下，输出文件是一个 `.js` 文件
+
+`react-native`
+>同 `preserve` 但是输出文件是一个 `.js` 文件。
+
+注意：
+> 因为会跟 `jsx` 语法冲突，`jsx`/`tsx` 文件中不能使用 `<foo>` 来做类型断言
+
++ jsxFactory
+> 该配置配合 `jsx: react` 替换默认的 `React.createElement`，比如 `preact` 的实现等。
+
+
+其他信息，参考：[handbook-jsx](https://www.typescriptlang.org/docs/handbook/jsx.html)
 
 ---
 
@@ -569,3 +596,4 @@ c、`async` 操作
 + [modules](https://www.typescriptlang.org/docs/handbook/modules.html)
 + [module-resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html)
 + [node.js-modules](https://nodejs.org/api/modules.html)
++ [handbook-jsx](https://www.typescriptlang.org/docs/handbook/jsx.html)
