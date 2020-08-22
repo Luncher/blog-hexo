@@ -579,7 +579,7 @@ a、`extending class`
 b、`spreading arrays or objects`(展开语法)
 c、`async` 操作
 
-为了避免在每个输出的代码文件都有同样的一份 `helper` 代码，`ts` 提供了一个 [tslib](https://www.npmjs.com/package/tslib) 包，包含了所有 `helper` 代码的实现。
+为了避免在每个输出的代码文件都有同样的一份 `helper` 代码，`ts` 提供了一个 [tslib](https://www.npmjs.com/package/tslib) 包，包含了所有 `helper` 代码的实现。注意：`tslib` 需要手动安装。
 
 
 + Source Map 配置
