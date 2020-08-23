@@ -137,7 +137,7 @@ function testLiteralString(arg: Foo | Bar) {
 >和其他类型类似，`常量类型的判断` 只会对 `if` 区块生效。
 
 #### 用户自定义类型保护
-`typescript` 在 3.7 版本新增了一个 `is` 操作符，专门用于类型的判定。
+`typescript` 内置了一个 `is` 操作符，专门用于类型的判定。
 **基本用法**
 
 ```ts
